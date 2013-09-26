@@ -1,0 +1,118 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="../../../../js/libs/jquery-1.9.0/jquery.min.js"></script>
+        <script src="../../../../js/libs/jquery-validate-1.10.0/jquery.validate.min.js"></script>
+        <style>
+            .error{
+                color: red;
+                
+            }
+            input.error{
+                background-color: crimson;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1>formulario</h1>
+        <form id="form1" name="formulario" method="post" action="Empleado/a=guardar">
+            Nombre: <input type="text" name="nombre"><br>
+            Apellido: <input type="text" name="apellido"><br>
+            <p>Ingrese su número de documento</p>
+            <input type="text" name="documento"><br>
+            <p>seleccione</p>
+            <input type="radio" name="genero" value="masculino">Masculino<br>
+            <input type="radio" name="genero" value="femenino">Female<br>
+            
+            <p>seleccione</p>
+            <input type="checkbox" name="financiacion" value="Estudia">Estudia<br>
+            <input type="checkbox" name="financiacion" value="Trabaja">Trabaja<br>
+            <input type="checkbox" name="financiacion" value="juega">juega<br>
+            <input type="checkbox" name="financiacion" value="fuma">fuma<br>
+            <input type="checkbox" name="financiacion" value="Independiente">Independiente<br>
+            <input type="checkbox" name="financiacion" value="Empleado">Empleado<br>
+            <p>fecha de Nacimiento</p>
+            <input type="date" name="fechaenquenacio"><br>
+            <input type="submit" value="Aceptar">
+            <input type="hidden" name="a" value="guardar">
+        </form>
+        <script>
+             $("#form1").validate(                
+        
+        {
+    errorLabelContainer:"#messagebox",
+    wrapper:"li",
+         rules:
+                 {
+                  nombre:
+             {
+         required: true
+             
+            },
+             apellido:
+                     {
+                 required: true,
+                 
+            },
+                     documento:
+                             {
+                         required: true
+                         },
+             financiacion:
+                     {
+                 required: true
+                     },
+                     genero:{
+                         required:true
+                     },
+        fechaenquenacio:{
+            required:true
+        }         
+        },
+                 messages:
+                         {
+                     nombre:{
+                         required: "por favor digite su nombre",
+                         
+            },
+                     apellido:
+                             {
+                         required:"porfavor digite su apellido"
+                             },
+                             documento:
+                             {
+                         required: "por favor degite su documeto"
+                         },
+                         financiacion:
+                             {
+                         required: "por favor seleccione una opcion"
+                         },
+                         genero:{
+                             required:"por favor seleccione su genero"
+                         },
+                         fechaenquenacio:{
+                          required:"seleccione su fecha de nacimiento"
+                                     }         
+                     
+                     }                         
+                         }
+           );          
+                     
+                 
+    
+        
+        
+        </script>
+            
+                
+        
+        
+    </body>
+</html>
